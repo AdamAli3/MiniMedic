@@ -31,7 +31,7 @@ class NeuralNetwork():
 
             adjustment = np.dot(training_set_inputs.T, error * self.__sigmoid_derivative(output))
 
-            self.synaptic_weights += adjustment
+            self.synaptic_weights = self.synaptic_weights + adjustment
             weights.append(self.synaptic_weights.copy())
 
         return errors, weights
@@ -46,8 +46,9 @@ class NeuralNetwork():
             output = self.predict(training_set_inputs)
             error = training_set_outputs - output
             error_mean = np.mean(error)
+            check = (sum(abs(error)))
 
-            if sum(abs(error)) < 0.02:
+            if (check < error_delta):
                 print("Training is complete!")
                 print("Training took {0} iterations to get fit".format(count))
                 break

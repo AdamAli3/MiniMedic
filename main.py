@@ -22,15 +22,18 @@ training_output = df.iloc[0:40, 6]
 training_output = training_output.append(df.iloc[61:160, 6])
 training_output = training_output.append(df.iloc[211:277, 6])
 training_output = training_output.values
-print(training_output   )
+print(training_output)
 
 print(training_input)
-input("Press any ky to exit")
+input("Press any key to exit")
 
 # train neural network
 # demonstrate predictions
 SEED = 20180104
 ITERATION_COUNT = 1500
-DELTA = 0.001
+DELTA = 0.02
 mini_medic = nn.NeuralNetwork(6, 1, SEED, 3)
 mini_medic.train(training_input, training_output, ITERATION_COUNT)
+test_inputs = df.iloc[1,:6].values
+print(mini_medic.predict(test_inputs))
+input("Press any key to exit")
