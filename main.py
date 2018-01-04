@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import neural_network as nn
 
 # open csv
 # load into a dataframe
@@ -28,3 +29,8 @@ input("Press any ky to exit")
 
 # train neural network
 # demonstrate predictions
+SEED = 20180104
+ITERATION_COUNT = 1500
+DELTA = 0.001
+mini_medic = nn.NeuralNetwork(6, 1, SEED, 3)
+mini_medic.train(training_input, training_output, ITERATION_COUNT)

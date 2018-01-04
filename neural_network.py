@@ -6,8 +6,8 @@ class NeuralNetwork():
         np.random.seed(seed)
         self.input_count = input_count
         self.output_count = output_count
-        self.generate_random_weights()
         self.labels = labels
+        self.generate_random_weights()
 
     def __sigmoid(self, x):
         return (self.labels - 1) * (1 / (1 + np.exp(-x)))
@@ -18,7 +18,7 @@ class NeuralNetwork():
     def generate_random_weights(self):
         self.synaptic_weights = np.random.uniform(0, (self.labels - 1), size=(self.input_count, self.output_count))
 
-    def train(self, training_set_inputs, training_set_outputs, number_of_iterations):
+    def train(self, training_set_inputs, training_set_outputs, number_of_training_iterations):
         errors = []
         weights = []
 
@@ -61,4 +61,4 @@ class NeuralNetwork():
         self.generate_random_weights()
 
     def predict(self, inputs):
-        rturn self.__sigmoid(np.dot(inputs, self.synaptic_weights))
+        return self.__sigmoid(np.dot(inputs, self.synaptic_weights))
