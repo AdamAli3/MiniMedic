@@ -35,5 +35,6 @@ DELTA = 0.02
 mini_medic = nn.NeuralNetwork(6, 1, SEED, 3)
 mini_medic.train(training_input, training_output, ITERATION_COUNT)
 test_inputs = df.iloc[1,:6].values
+print(test_inputs)
 print(mini_medic.predict(test_inputs))
 input("Press any key to exit")

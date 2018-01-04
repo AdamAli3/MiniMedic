@@ -62,4 +62,5 @@ class NeuralNetwork():
         self.generate_random_weights()
 
     def predict(self, inputs):
+        print(self.synaptic_weights)
         return self.__sigmoid(np.dot(inputs, self.synaptic_weights))
