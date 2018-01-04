@@ -17,7 +17,11 @@ training_input = (training_input.transform(lambda x: x/100)).values
 df.loc[df.out == "Hernia", 'out'] = 1
 df.loc[df.out == "Spondylolisthesis", 'out'] = 2
 df.loc[df.out == "Normal", 'out'] = 0
-print(df)
+training_output = df.iloc[0:40, 6]
+training_output = training_output.append(df.iloc[61:160, 6])
+training_output = training_output.append(df.iloc[211:277, 6])
+training_output = training_output.values
+print(training_output   )
 
 print(training_input)
 input("Press any ky to exit")
