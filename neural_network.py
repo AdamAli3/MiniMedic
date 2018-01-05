@@ -10,13 +10,14 @@ class NeuralNetwork():
         self.generate_random_weights()
 
     def __sigmoid(self, x):
-        return (self.labels - 1) * (1 / (1 + np.exp(-x * 2)))
+        return (self.labels - 1) * (1 / (1 + np.exp(-x * (self.labels - 1))))
 
     def __sigmoid_derivative(self, x):
         return (self.labels - 1) * x * (1 - x)
 
     def generate_random_weights(self):
         self.synaptic_weights = np.random.uniform(0, (self.labels - 1), size=(self.input_count))
+        print("Initial synaptic weights: \n", self.synaptic_weights)
 
     def train(self, training_set_inputs, training_set_outputs, number_of_training_iterations):
         errors = []
@@ -25,11 +26,16 @@ class NeuralNetwork():
         for iteration in range(number_of_training_iterations):
 
             output = self.predict(training_set_inputs)
+            print("Output: \n", output)
 
             error = training_set_outputs - output
             errors.append(abs(np.mean(error)))
 
-            adjustment = np.dot(training_set_inputs.T, error * self.__sigmoid_derivative(output))
+            print("Error: \n", error)
+
+            adjustment = np.dot(training_set_outputs.T, error * self.__sigmoid_derivative(output))
+            print("Adjustment:")
+            input(adjustment)
 
             self.synaptic_weights = self.synaptic_weights + adjustment
             weights.append(self.synaptic_weights.copy())
@@ -52,7 +58,7 @@ class NeuralNetwork():
                 print("Training is complete!")
                 print("Training took {0} iterations to get fit".format(count))
                 break
-            adjustments = np.dot(training_set_inputs.T, error * sel.__sigmoid_derivative(output))
+            adjustments = np.dot(training_set_inputs.T, error * self.__sigmoid_derivative(output))
             self.synaptic_weights += adjustments
             count += 1
 
@@ -60,6 +66,12 @@ class NeuralNetwork():
 
     def untrain(self):
         self.generate_random_weights()
+
+    def out_predict(self, inputs):
+        print(inputs)
+        print(self.synaptic_weights)
+        print(np.dot(inputs, self.synaptic_weights))
+        return self.__sigmoid(np.dot(inputs, self.synaptic_weights))
 
     def predict(self, inputs):
         return self.__sigmoid(np.dot(inputs, self.synaptic_weights))

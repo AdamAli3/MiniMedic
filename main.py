@@ -30,14 +30,15 @@ input("Press any key to continue")
 # train neural network
 # demonstrate predictions
 SEED = 20180104
-ITERATION_COUNT = 1500
+ITERATION_COUNT = 5000
 DELTA = 0.02
-mini_medic = nn.NeuralNetwork(6, 1, SEED, 3)
+mini_medic = nn.NeuralNetwork(6, 1, SEED, 2)
 mini_medic2 = nn.NeuralNetwork(6, 1, SEED, 2)
 mini_medic.train(training_input, training_output, ITERATION_COUNT)
 mini_medic2.train(training_input, training_output, ITERATION_COUNT)
-test_inputs = df.iloc[1,:6].values
-print(test_inputs)
-print(mini_medic.predict(test_inputs))
-print(mini_medic2.predict(test_inputs))
+test_inputs = df.iloc[1,:6]
+test_inputs = (test_inputs.transform(lambda x: x/100)).values
+print("Initital test", test_inputs)
+print(mini_medic.out_predict(test_inputs))
+print(mini_medic2.out_predict(test_inputs))
 input("Press any key to exit")
