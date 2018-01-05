@@ -10,7 +10,7 @@ class NeuralNetwork():
         self.generate_random_weights()
 
     def __sigmoid(self, x):
-        return (self.labels - 1) * (1 / (1 + np.exp(-x)))
+        return (self.labels - 1) * (1 / (1 + np.exp(-x * 2)))
 
     def __sigmoid_derivative(self, x):
         return (self.labels - 1) * x * (1 - x)
@@ -62,5 +62,4 @@ class NeuralNetwork():
         self.generate_random_weights()
 
     def predict(self, inputs):
-        print(self.synaptic_weights)
         return self.__sigmoid(np.dot(inputs, self.synaptic_weights))
