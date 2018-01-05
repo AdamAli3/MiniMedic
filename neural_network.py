@@ -16,7 +16,7 @@ class NeuralNetwork():
         return (self.labels - 1) * x * (1 - x)
 
     def generate_random_weights(self):
-        self.synaptic_weights = np.random.uniform(0, (self.labels - 1), size=(self.input_count, self.output_count))
+        self.synaptic_weights = np.random.uniform(0, (self.labels - 1), size=(self.input_count))
 
     def train(self, training_set_inputs, training_set_outputs, number_of_training_iterations):
         errors = []

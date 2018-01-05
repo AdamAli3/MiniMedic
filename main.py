@@ -19,7 +19,7 @@ df.loc[df.out == "Hernia", 'out'] = 1
 df.loc[df.out == "Spondylolisthesis", 'out'] = 2
 df.loc[df.out == "Normal", 'out'] = 0
 training_output = df.iloc[0:40, 6]
-training_output = training_output.append(df.iloc[61:160, 6])
+training_output = training_output.append(df.iloc[61:161, 6])
 training_output = training_output.append(df.iloc[211:277, 6])
 training_output = training_output.values
 print(training_output)
