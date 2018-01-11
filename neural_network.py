@@ -17,7 +17,7 @@ class NeuralNetwork():
         return final
 
     def sigmoid(self, x):
-        return 3 / (1 + np.exp(-x * 3))
+        return 1 / (1 + np.exp(-x))
 
     def train_predict(self, given_input):
         scores = []
@@ -48,3 +48,5 @@ class NeuralNetwork():
         output = (self.train_predict(training_input))
         error = (training_output - output)
         print(error)
+        print(training_input)
+        print(self.normal_contstants)

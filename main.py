@@ -12,9 +12,9 @@ training_input = df[df.out == "Hernia"].iloc[0:40, :6]
 training_input = training_input.append(df[df.out == "Spondylolisthesis"].iloc[0:100, :6], ignore_index=True)
 training_input = training_input.append(df[df.out == "Normal"].iloc[0:66, :6], ignore_index=True)
 
-#Change Hernia to 1, Spondylolisthesis to 2, and Normal to 0
+#Change Hernia to 1, Spondylolisthesis to 0.5, and Normal to 0
 df.loc[df.out == "Hernia", 'out'] = 1
-df.loc[df.out == "Spondylolisthesis", 'out'] = 2
+df.loc[df.out == "Spondylolisthesis", 'out'] = 0.5
 df.loc[df.out == "Normal", 'out'] = 0
 
 training_output = df.iloc[0:40, 6]
