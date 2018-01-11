@@ -25,5 +25,6 @@ training_output = training_output.values
 
 input("Press any key to continue")
 
-MiniMedic = nn.NeuralNetwork()
-MiniMedic.normalize_training_input(training_input)
+SEED = 2018111
+MiniMedic = nn.NeuralNetwork(6, SEED)
+MiniMedic.train(training_input, training_output, 10)
