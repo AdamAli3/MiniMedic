@@ -7,6 +7,7 @@ class NeuralNetwork():
     def __init__(self, input_count, seed):
         np.random.seed(seed)
         self.normal_contstants = []
+        self.normal_minimums = []
         self.input_count = input_count
         self.generate_random_weights()
 
@@ -36,17 +37,20 @@ class NeuralNetwork():
     def normalize_training_input(self, training_input):
         for column in training_input:
             self.normal_contstants.append((training_input[column].max() - training_input[column].min()) / 2)
+            self.normal_minimums.append(training_input[column].min())
 
         for i in range(self.input_count):
             distance = self.normal_contstants[i]
-            training_input.iloc[:, i] = (training_input.iloc[:, i].transform(lambda x: (x - distance) / distance))
+            minimum = self.normal_minimums[i]
+            training_input.iloc[:, i] = (training_input.iloc[:, i].transform(lambda x: ((x - minimum) - distance) / distance))
 
     def train(self, training_input, training_output, iterations):
         self.normalize_training_input(training_input)
-        print("Synaptic Weights: ", self.synaptic_weights)
-        print("Bias: ", self.bias)
+
         output = (self.train_predict(training_input))
         error = (training_output - output)
-        print(error)
-        print(training_input)
-        print(self.normal_contstants)
+        adjustments = []
+
+        for i in range(len(error)):
+            adjustments.append((error[i] * training_input.iloc[i]))
+        print(sum(adjustments))
