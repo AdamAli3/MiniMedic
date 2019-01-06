@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-import neural_network as nn
 
 # open csv
 # load into a dataframe
@@ -24,7 +23,3 @@ training_output = training_output.append(df.iloc[211:277, 6])
 training_output = training_output.values
 
 input("Press any key to continue")
-
-SEED = 2018111
-MiniMedic = nn.NeuralNetwork(6, SEED)
-MiniMedic.train(training_input, training_output, 10)
