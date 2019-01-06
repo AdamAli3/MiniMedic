@@ -1,6 +1,6 @@
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import math
 
 class hypothesis():
 
@@ -11,7 +11,7 @@ class hypothesis():
         self.theta = theta
 
     def train(self, training_set):
-        df = training_set
+        df = training_set.copy()
         # process training_set
         self.process_data(df)
 
@@ -48,6 +48,14 @@ class hypothesis():
 
         return J
 
+    def plot_data(self, plot):
+        plt.figure(plot, figsize=(11,6))
+        for i in range(6):
+            plt.subplot(230 + (i + 1))
+            plt.plot(self.X[:,i], self.Y, 'ro')
+            plt.ylabel('Y')
+            plt.xlabel('X' + str(i))
+        plt.show()
 
     def process_data(self, df):
 
