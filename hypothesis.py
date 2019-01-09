@@ -10,9 +10,9 @@ class hypothesis():
         self.negative = negative
         self.theta = theta
 
-    def train(self, training_set):
-        df = training_set.copy()
-        # process training_set
+    def train(self, testing_set):
+        df = testing_set.copy()
+        # process testing_set
         self.process_data(df)
 
         self.gradient_descent(0.01, 1500)
