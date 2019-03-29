@@ -1,17 +1,17 @@
 
 @font-face {
                           font-family: "Gotham-Book";
-                          src: url('../fonts/Gotham-Book.otf') format("opentype");
+                          src: url('fonts/Gotham-Book.otf') format("opentype");
                         }
                         @font-face {
                           font-family: "Gotham-Medium";
-                          src: url('../fonts/Gotham-Medium.otf') format("opentype");
+                          src: url('fonts/Gotham-Medium.otf') format("opentype");
                         }
                         @font-face {
                           font-family: "Gotham-Bold";
-                          src: url('../fonts/Gotham-Bold.otf') format("opentype");
+                          src: url('fonts/Gotham-Bold.otf') format("opentype");
                         }
-                        
+
 .minimedichomepage {
   width               : 100%;
   min-width           : 1440px;
@@ -948,56 +948,56 @@ div {
 }
 @-webkit-keyframes anima-reveal {
   0%
-   
+
   {
       opacity: 0;
     }
-  
-    
+
+
   100%
-   
+
   {
       opacity: 1;
     }
 }
 @-moz-keyframes anima-reveal {
   0%
-   
+
   {
       opacity: 0;
     }
-  
-    
+
+
   100%
-   
+
   {
       opacity: 1;
     }
 }
 @-o-keyframes anima-reveal {
   0%
-   
+
   {
       opacity: 0;
     }
-  
-    
+
+
   100%
-   
+
   {
       opacity: 1;
     }
 }
 @keyframes anima-reveal {
   0%
-   
+
   {
       opacity: 0;
     }
-  
-    
+
+
   100%
-   
+
   {
       opacity: 1;
     }

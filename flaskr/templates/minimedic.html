@@ -6,20 +6,51 @@
         <meta content="width=1440, maximum-scale=1.0" name="viewport"/>
         <link href="./css/miniMedicHomePage.css" rel="stylesheet" type="text/css"/>
         <meta content="Launchpad by Anima" name="author">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='miniMedicHomePage.css') }}">
         </meta>
     </head>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+
+    <script type=text/javascript>
+      console.log("hello");
+      $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+
+      $(function() {
+        $('a#calculate').bind('click', function() {
+
+          $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
+            pelvic_incidence: $('input[name="PI"]').val(),
+            pelvic_tilt: $('input[name="PT"]').val(),
+            lumbar_lordosis_angle: $('input[name="LLA"]').val(),
+            sacral_slope: $('input[name="SS"]').val(),
+            pelvic_radius: $('input[name="PR"]').val(),
+            degree_spondylolisthesis: $('input[name="DR"]').val(),
+          }, function(data) {
+            $("#result").text(data.result);
+          });
+          return false;
+        });
+      });
+    </script>
+
+
     <body style="margin: 0;
  background: rgba(255, 255, 255, 1.0);">
         <input id="anPageName" name="page" type="hidden" value="minimedichomepage"/>
         <div class="minimedichomepage">
             <div style="width: 1440px; height: 100%; position:relative; margin:auto;">
                 <div class="results">
-                    <img anima-src="./img/mini-medic-home-page-background.png" class="background" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <img anima-src="static/img/mini-medic-home-page-background.png" class="background" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                     <div class="treatment">
-                        //treatment
+                        Physical therapy exercises to help increase the flexibility in the lower back can help to support abdominal and back muscles, and stretch the hamstrings to alleviate
+                        stress in the lower back.
                     </div>
                     <div class="description">
-                        //description
+                        Spondylolisthesis is when a vertebra slips out of alignment and onto the vertebra below it, most often occuring at the base of the spine. It occurs most often in young
+                        athletes and patients with over 60 with osteoarthritis and minimal trauma.
                     </div>
                     <div class="treatment1">
                         Treatment:
@@ -27,21 +58,21 @@
                     <div class="description1">
                         Description:
                     </div>
-                    <div class="spondylolisthesis">
+                    <div class="spondylolisthesis" id=result>
                         SPONDYLOLISTHESIS
                     </div>
                     <div class="diagnosis">
                         <span class="span1">Diagnosis</span><span class="span2">: </span>
                     </div>
-                    <img anima-src="./img/mini-medic-home-page-header-underline.png" class="headerunderline" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <img anima-src="static/img/mini-medic-home-page-header-underline.png" class="headerunderline" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                 </div>
                 <div class="inputdata">
                     <div class="gobutton">
                         <div class="buttonbackground">
                         </div>
-                        <div class="go">
+                        <a href=# class="go" id=calculate>
                             GO!
-                        </div>
+                        </a>
                     </div>
                     <div class="uploadfilebutton">
                         <div class="rectangle">
@@ -59,9 +90,7 @@
                         <div class="degreespondylolisth">
                             Degree Spondylolisthesis
                         </div>
-                        <div class="a321313490">
-                            32.1313490
-                        </div>
+                        <input class="a321313490" type=text size=5 name=DS>
                     </div>
                     <div class="pelvicradius">
                         <div class="rectangle">
@@ -69,9 +98,7 @@
                         <div class="pelvicradius1">
                             Pelvic Radius
                         </div>
-                        <div class="a321313490">
-                            32.1313490
-                        </div>
+                        <input class="a321313490" type=text size=5 name=PR>
                     </div>
                     <div class="sacralslope">
                         <div class="rectangle">
@@ -79,9 +106,7 @@
                         <div class="sacralslope1">
                             Sacral Slope
                         </div>
-                        <div class="a321313490">
-                            32.1313490
-                        </div>
+                        <input class="a321313490"  type=text size=5 name=SS>
                     </div>
                     <div class="lumbarlordosisangle">
                         <div class="rectangle">
@@ -89,9 +114,7 @@
                         <div class="lumbarlordosisangl">
                             Lumbar<br />Lordosis Angle
                         </div>
-                        <div class="a321313490">
-                            32.1313490
-                        </div>
+                        <input class="a321313490"  type=text size=5 name=LA>
                     </div>
                     <div class="pelvictilt">
                         <div class="rectangle">
@@ -99,9 +122,7 @@
                         <div class="pelvictilt1">
                             Pelvic Tilt
                         </div>
-                        <div class="a321313490">
-                            32.1313490
-                        </div>
+                        <input class="a321313490" type=text size=5 name=PT>
                     </div>
                     <div class="pelvicincidence">
                         <div class="rectangle">
@@ -109,17 +130,15 @@
                         <div class="pelvicincidence1">
                             Pelvic Incidence
                         </div>
-                        <div class="a321313490">
-                            32.1313490
-                        </div>
+                        <input class="a321313490" type=text size=5 name=PI>
                     </div>
                     <div class="insertdatabelow">
                         Insert Data Below
                     </div>
                 </div>
                 <div class="header">
-                    <img anima-src="./img/mini-medic-home-page-header-logo-line@2x.png" class="headerlogoline" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <img anima-src="./img/mini-medic-home-page-header-underline-1.png" class="headerunderline" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <img anima-src="static/img/mini-medic-home-page-header-logo-line@2x.png" class="headerlogoline" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <img anima-src="static/img/mini-medic-home-page-header-underline-1.png" class="headerunderline" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                     <div class="about">
                         About
                     </div>
@@ -130,13 +149,13 @@
                         Mini Medic
                     </div>
                     <div class="group2">
-                        <img anima-src="./img/mini-medic-home-page-logo@2x.png" class="logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                        <img anima-src="./img/mini-medic-home-page-oval@2x.png" class="oval" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                        <img anima-src="./img/mini-medic-home-page-oval@2x.png" class="oval1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                        <img anima-src="static/img/mini-medic-home-page-logo@2x.png" class="logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                        <img anima-src="static/img/mini-medic-home-page-oval@2x.png" class="oval" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                        <img anima-src="static/img/mini-medic-home-page-oval@2x.png" class="oval1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                         <div class="group">
-                            <img anima-src="./img/mini-medic-home-page-line-2@2x.png" class="line2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                            <img anima-src="statoc/img/mini-medic-home-page-line-2@2x.png" class="line2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             <div class="group12">
-                                <img anima-src="./img/mini-medic-home-page-oval-2@2x.png" class="oval2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                                <img anima-src="static/img/mini-medic-home-page-oval-2@2x.png" class="oval2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                                 <div class="group11">
                                     <div class="rectangle">
                                     </div>
