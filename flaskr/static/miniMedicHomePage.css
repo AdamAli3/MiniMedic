@@ -353,10 +353,11 @@ div {
   background-color    : rgba(255,255,255,0.0);
   top                 : 81px;
   height              : auto;
-  width               : 182px;
+  width               : 150px;
   position            : absolute;
   margin              : 0;
-  left                : 2px;
+  left                : 15px;
+  right               : 15px;
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
@@ -418,10 +419,11 @@ div {
   background-color    : rgba(255,255,255,0.0);
   top                 : 64px;
   height              : auto;
-  width               : 182px;
+  width               : 150px;
   position            : absolute;
   margin              : 0;
-  left                : -1px;
+  left                : 15px;
+  right               : 15px;
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
@@ -483,10 +485,11 @@ div {
   background-color    : rgba(255,255,255,0.0);
   top                 : 64px;
   height              : auto;
-  width               : 182px;
+  width               : 150px;
   position            : absolute;
   margin              : 0;
-  left                : -1px;
+  left                : 15px;
+  right               : 15px;
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
@@ -548,10 +551,11 @@ div {
   background-color    : rgba(255,255,255,0.0);
   top                 : 81px;
   height              : auto;
-  width               : 182px;
+  width               : 150px;
   position            : absolute;
   margin              : 0;
-  left                : -1px;
+  left                : 15px;
+  right               : 15px;
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
@@ -613,10 +617,11 @@ div {
   background-color    : rgba(255,255,255,0.0);
   top                 : 64px;
   height              : auto;
-  width               : 182px;
+  width               : 150px;
   position            : absolute;
   margin              : 0;
-  left                : -1px;
+  left                : 15px;
+  right               : 15px;
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
@@ -678,10 +683,11 @@ div {
   background-color    : rgba(255,255,255,0.0);
   top                 : 64px;
   height              : auto;
-  width               : 182px;
+  width               : 150px;
   position            : absolute;
   margin              : 0;
-  left                : -1px;
+  left                : 15px;
+  right               : 15px;
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
