@@ -1,17 +1,17 @@
 
 @font-face {
                           font-family: "Gotham-Book";
-                          src: url('fonts/Gotham-Book.otf') format("opentype");
+                          src: url('../fonts/Gotham-Book.otf') format("opentype");
                         }
                         @font-face {
                           font-family: "Gotham-Medium";
-                          src: url('fonts/Gotham-Medium.otf') format("opentype");
+                          src: url('../fonts/Gotham-Medium.otf') format("opentype");
                         }
                         @font-face {
                           font-family: "Gotham-Bold";
-                          src: url('fonts/Gotham-Bold.otf') format("opentype");
+                          src: url('../fonts/Gotham-Bold.otf') format("opentype");
                         }
-
+                        
 .minimedichomepage {
   width               : 100%;
   min-width           : 1440px;
@@ -783,7 +783,7 @@ div {
   text-align          : left;
   line-height         : 60.0px;
 }
-.minimedichomepage .header .group2 {
+.minimedichomepage .header .minimediclogo {
   background-color    : rgba(255,255,255,0.0);
   top                 : 0px;
   height              : 62px;
@@ -795,130 +795,14 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
-.minimedichomepage .header .group2 .logo {
+.minimedichomepage .header .minimediclogo .group2 {
   background-color    : rgba(255,255,255,0.0);
-  top                 : 19px;
-  height              : 43px;
+  top                 : 0px;
+  height              : 62px;
   width               : 62px;
   position            : absolute;
   margin              : 0;
   left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.minimedichomepage .header .group2 .oval {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 42px;
-  height              : 11px;
-  width               : 11px;
-  position            : absolute;
-  margin              : 0;
-  left                : 15px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.minimedichomepage .header .group2 .oval1 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 42px;
-  height              : 11px;
-  width               : 11px;
-  position            : absolute;
-  margin              : 0;
-  left                : 36px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.minimedichomepage .header .group2 .group {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 20px;
-  width               : 14px;
-  position            : absolute;
-  margin              : 0;
-  left                : 24px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.minimedichomepage .header .group2 .group .line2 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 9px;
-  height              : 11px;
-  width               : 2px;
-  position            : absolute;
-  margin              : 0;
-  left                : 6px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.minimedichomepage .header .group2 .group .group12 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 14px;
-  width               : 14px;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.minimedichomepage .header .group2 .group .group12 .oval2 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 14px;
-  width               : 14px;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.minimedichomepage .header .group2 .group .group12 .group11 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 3px;
-  height              : 8px;
-  width               : 8px;
-  position            : absolute;
-  margin              : 0;
-  left                : 3px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.minimedichomepage .header .group2 .group .group12 .group11 .rectangle {
-  background-color    : rgba(255, 255, 255, 1.0);
-  top                 : 0px;
-  height              : 8px;
-  box-sizing          : border-box;
-  width               : 2px;
-  position            : absolute;
-  margin              : 0;
-  left                : 3px;
-  border-style        : solid;
-  border-width        : 1px;
-  border-color        : rgba(255, 255, 255, 1.0);
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.minimedichomepage .header .group2 .group .group12 .group11 .rectangle1 {
-  background-color    : rgba(255, 255, 255, 1.0);
-  top                 : 3px;
-  height              : 2px;
-  box-sizing          : border-box;
-  width               : 8px;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  border-style        : solid;
-  border-width        : 1px;
-  border-color        : rgba(255, 255, 255, 1.0);
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
@@ -948,56 +832,56 @@ div {
 }
 @-webkit-keyframes anima-reveal {
   0%
-
+   
   {
       opacity: 0;
     }
-
-
+  
+    
   100%
-
+   
   {
       opacity: 1;
     }
 }
 @-moz-keyframes anima-reveal {
   0%
-
+   
   {
       opacity: 0;
     }
-
-
+  
+    
   100%
-
+   
   {
       opacity: 1;
     }
 }
 @-o-keyframes anima-reveal {
   0%
-
+   
   {
       opacity: 0;
     }
-
-
+  
+    
   100%
-
+   
   {
       opacity: 1;
     }
 }
 @keyframes anima-reveal {
   0%
-
+   
   {
       opacity: 0;
     }
-
-
+  
+    
   100%
-
+   
   {
       opacity: 1;
     }
