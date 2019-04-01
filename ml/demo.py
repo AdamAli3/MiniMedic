@@ -8,12 +8,12 @@ print("Extracting data points...")
 df = pd.read_csv("column_3C_weka.csv")
 df2 = df.copy()
 
-alpha = 0.01
+alpha = 0.018299999999999945
 iters = 1500
 
 try:
     print("Looking for pickles...")
-    h1 = pickle.load(open("h1111.p", "rb"))
+    h1 = pickle.load(open("h11.p", "rb"))
     h2 = pickle.load(open("h2.p", "rb"))
     h3 = pickle.load(open("h3.p", "rb"))
     print("Pickles found!")
@@ -27,29 +27,31 @@ except FileNotFoundError:
     h2.train(df, alpha, iters)
     h3.train(df, alpha, iters)
 
+
 print("Creating testing data...")
 df2.loc[df2.out == "Hernia", 'out'] = 0
 df2.loc[df2.out == "Spondylolisthesis", 'out'] = 1
 df2.loc[df2.out == "Normal", 'out'] = 2
 
 testing_input = df2[df2.out == 0].iloc[0:40, :6]
-testing_input = testing_input.append(df2[df2.out == 1].iloc[61:161, :6], ignore_index=True)
-testing_input = testing_input.append(df2[df2.out == 2].iloc[211:277, :6], ignore_index=True)
+testing_input = testing_input.append(df2[df2.out == 1].iloc[0:40, :6], ignore_index=True)
+testing_input = testing_input.append(df2[df2.out == 2].iloc[0:40, :6], ignore_index=True)
 
 expected_output = df2[df2.out == 0].iloc[0:40, 6]
-expected_output = expected_output.append(df2[df2.out == 1].iloc[61:161, 6], ignore_index=True)
-expected_output = expected_output.append(df2[df2.out == 2].iloc[211:277, 6], ignore_index=True)
+expected_output = expected_output.append(df2[df2.out == 1].iloc[0:40, 6], ignore_index=True)
+expected_output = expected_output.append(df2[df2.out == 2].iloc[0:40, 6], ignore_index=True)
 expected_output = expected_output.values
 
 
 print("Predicting outcomes...")
 predicted_output = []
+predictions = []
 
 for index, row in testing_input.iterrows():
     x_array = np.array(row)
     predict = [h1.predict(x_array), h2.predict(x_array), h3.predict(x_array)]
+    predictions.append(predict)
     predicted_output.append(np.argmax(predict))
-
 
 print("Calculating error")
 sum_error = 0
