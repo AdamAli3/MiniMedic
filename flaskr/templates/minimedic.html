@@ -18,9 +18,12 @@
       console.log("hello");
       $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 
+      $(document).ready(function() {
+       $('.results').hide();
+      });
+
       $(function() {
         $('a#calculate').bind('click', function() {
-
           $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
             pelvic_incidence: $('input[name="PI"]').val(),
             pelvic_tilt: $('input[name="PT"]').val(),
@@ -29,6 +32,10 @@
             pelvic_radius: $('input[name="PR"]').val(),
             degree_spondylolisthesis: $('input[name="DR"]').val(),
           }, function(data) {
+            $(".results").show();
+            $('html, body').animate({
+                scrollTop: $(".results").offset().top
+              }, 600);
             $("#result").text(data.result);
           });
           return false;
@@ -43,8 +50,11 @@
           <div class="minimedichomepage">
             <div style="width: 1440px; height: 100%; position:relative; margin:auto;">
               <div class="header">
-                  <img anima-src="static/img/mini-medic-home-page-header-logo-line@2x.png" class="headerlogoline" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                  <img anima-src="static/img/mini-medic-home-page-header-underline-1.png" class="headerunderline" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                  <div class="minimediclogo">
+                      <img src="static/img/MiniMedicLogo.png" class="group2"/>
+                  </div>
+                  <img src="static/img/mini-medic-home-page-header-logo-line@2x.png" class="headerlogoline"/>
+                  <img src="static/img/mini-medic-home-page-header-underline-1.png" class="headerunderline"/>
                   <div class="about">
                       About
                   </div>
@@ -54,67 +64,10 @@
                   <div class="minimedictext">
                       Mini Medic
                   </div>
-                  <div class="minimediclogo">
-                      <img anima-src="./img/mini-medic-home-page-group-2@2x.png" class="group2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                  </div>
               </div>
               <div class="inputdata">
-                <div class="gobutton">
-                    <div class="buttonbackground">
-                    </div>
-                    <a href=# class="go" id=calculate>
-                        GO!
-                    </a>
-                </div>
-                <div class="uploadfilebutton">
-                    <div class="rectangle">
-                    </div>
-                    <div class="uploadfile">
-                        Upload file
-                    </div>
-                </div>
-                <div class="or">
-                    ~or~
-                </div>
-                <div class="degreespondylolisthesis">
-                    <div class="rectangle">
-                    </div>
-                    <div class="degreespondylolisth">
-                        Degree Spondylolisthesis
-                    </div>
-                    <input class="a321313490" type=text size=5 name=DS>
-                </div>
-                <div class="pelvicradius">
-                    <div class="rectangle">
-                    </div>
-                    <div class="pelvicradius1">
-                        Pelvic Radius
-                    </div>
-                    <input class="a321313490" type=text size=5 name=PR>
-                </div>
-                <div class="sacralslope">
-                    <div class="rectangle">
-                    </div>
-                    <div class="sacralslope1">
-                        Sacral Slope
-                    </div>
-                    <input class="a321313490"  type=text size=5 name=SS>
-                </div>
-                <div class="lumbarlordosisangle">
-                    <div class="rectangle">
-                    </div>
-                    <div class="lumbarlordosisangl">
-                        Lumbar<br />Lordosis Angle
-                    </div>
-                    <input class="a321313490"  type=text size=5 name=LA>
-                </div>
-                <div class="pelvictilt">
-                    <div class="rectangle">
-                    </div>
-                    <div class="pelvictilt1">
-                        Pelvic Tilt
-                    </div>
-                    <input class="a321313490" type=text size=5 name=PT>
+                <div class="insertdatabelow">
+                    Insert Data Below
                 </div>
                 <div class="pelvicincidence">
                     <div class="rectangle">
@@ -122,10 +75,64 @@
                     <div class="pelvicincidence1">
                         Pelvic Incidence
                     </div>
-                    <input class="a321313490" type=text size=5 name=PI>
+                    <input class="label" type=text name=PI placeholder="0.0" onfocus="this.placeholder = ''" onblur="this.placeholder = '0.0'">
                 </div>
-                <div class="insertdatabelow">
-                    Insert Data Below
+                <div class="pelvictilt">
+                    <div class="rectangle">
+                    </div>
+                    <div class="pelvictilt1">
+                        Pelvic Tilt
+                    </div>
+                    <input class="label" type=text name=PT placeholder="0.0" onfocus="this.placeholder = ''" onblur="this.placeholder = '0.0'">
+                </div>
+                <div class="lumbarlordosisangle">
+                    <div class="rectangle">
+                    </div>
+                    <div class="lumbarlordosisangl">
+                        Lumbar<br />Lordosis Angle
+                    </div>
+                    <input class="label" type=text name=LA placeholder="0.0" onfocus="this.placeholder = ''" onblur="this.placeholder = '0.0'">
+                </div>
+                <div class="sacralslope">
+                    <div class="rectangle">
+                    </div>
+                    <div class="sacralslope1">
+                        Sacral Slope
+                    </div>
+                    <input class="label" type=text name=SS placeholder="0.0" onfocus="this.placeholder = ''" onblur="this.placeholder = '0.0'">
+                </div>
+                <div class="pelvicradius">
+                    <div class="rectangle">
+                    </div>
+                    <div class="pelvicradius1">
+                        Pelvic Radius
+                    </div>
+                    <input class="label" type=text name=PR placeholder="0.0" onfocus="this.placeholder = ''" onblur="this.placeholder = '0.0'">
+                </div>
+                <div class="degreespondylolisthesis">
+                    <div class="rectangle">
+                    </div>
+                    <div class="degreespondylolisth">
+                        Degree Spondylolisthesis
+                    </div>
+                    <input class="label" style="border: hidden; outline: none;" type=text name=DS placeholder="0.0" onfocus="this.placeholder = ''" onblur="this.placeholder = '0.0'">
+                </div>
+                <div class="or">
+                    ~or~
+                </div>
+                <div class="uploadfilebutton" style="cursor: wait;">
+                    <div class="rectangle"">
+                    </div>
+                    <div class="uploadfile">
+                        Upload file
+                    </div>
+                </div>
+                <div class="gobutton">
+                    <div class="buttonbackground">
+                    </div>
+                    <a href=# class="go" id=calculate >
+                        GO!
+                    </a>
                 </div>
               </div>
               <div class="results">
