@@ -37,6 +37,8 @@
                 scrollTop: $(".results").offset().top
               }, 600);
             $("#result").text(data.result);
+            $("#description").text(data.description);
+            $("#treatment").text(data.treatment);
           });
           return false;
         });
@@ -121,7 +123,7 @@
                     ~or~
                 </div>
                 <div class="uploadfilebutton" style="cursor: wait;">
-                    <div class="rectangle"">
+                    <div class="rectangle">
                     </div>
                     <div class="uploadfile">
                         Upload file
@@ -137,11 +139,11 @@
               </div>
               <div class="results">
                   <img anima-src="static/img/mini-medic-home-page-background.png" class="background" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                  <div class="treatment">
+                  <div class="treatment" id="treatment">
                       Physical therapy exercises to help increase the flexibility in the lower back can help to support abdominal and back muscles, and stretch the hamstrings to alleviate
                       stress in the lower back.
                   </div>
-                  <div class="description">
+                  <div class="description" id="description">
                       Spondylolisthesis is when a vertebra slips out of alignment and onto the vertebra below it, most often occuring at the base of the spine. It occurs most often in young
                       athletes and patients with over 60 with osteoarthritis and minimal trauma.
                   </div>
