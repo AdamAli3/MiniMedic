@@ -4,14 +4,13 @@ import numpy as np
 import pandas as pd
 import pickle
 
+
 print("Extracting data points...")
 df = pd.read_csv("column_3C_weka.csv")
-
-df = df.drop(['lumbar_lordosis_angle', 'pelvic_radius'], axis=1)
 df2 = df.copy()
 
-alpha = 0.018299999999999945
-iters = 1500
+alpha = 0.0000001
+iters = 500
 
 try:
     print("Looking for pickles...")
@@ -35,13 +34,13 @@ df2.loc[df2.out == "Hernia", 'out'] = 0
 df2.loc[df2.out == "Spondylolisthesis", 'out'] = 1
 df2.loc[df2.out == "Normal", 'out'] = 2
 
-testing_input = df2[df2.out == 0].iloc[0:40, :4]
-testing_input = testing_input.append(df2[df2.out == 1].iloc[0:40, :4], ignore_index=True)
-testing_input = testing_input.append(df2[df2.out == 2].iloc[0:40, :4], ignore_index=True)
+testing_input = df2[df2.out == 0].iloc[0:40, :6]
+testing_input = testing_input.append(df2[df2.out == 1].iloc[0:40, :6], ignore_index=True)
+testing_input = testing_input.append(df2[df2.out == 2].iloc[0:40, :6], ignore_index=True)
 
-expected_output = df2[df2.out == 0].iloc[0:40, 4]
-expected_output = expected_output.append(df2[df2.out == 1].iloc[0:40, 4], ignore_index=True)
-expected_output = expected_output.append(df2[df2.out == 2].iloc[0:40, 4], ignore_index=True)
+expected_output = df2[df2.out == 0].iloc[0:40, 6]
+expected_output = expected_output.append(df2[df2.out == 1].iloc[0:40, 6], ignore_index=True)
+expected_output = expected_output.append(df2[df2.out == 2].iloc[0:40, 6], ignore_index=True)
 expected_output = expected_output.values
 
 
@@ -55,18 +54,15 @@ for index, row in testing_input.iterrows():
     predictions.append(predict)
     predicted_output.append(np.argmax(predict))
 
-errors = [0,0,0]
 print("Calculating error")
 sum_error = 0
 for i in range(len(expected_output)):
     if predicted_output[i] != expected_output[i]:
         error = 1
-        errors[expected_output[i]] += 1
     else:
         error = 0
     sum_error += error
 
-print(errors)
 
 avg_error = sum_error/len(predicted_output)
 

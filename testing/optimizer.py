@@ -4,12 +4,12 @@ import numpy as np
 import pandas as pd
 import pickle
 
-max_iters = 500
-min_iters = 500
+max_iters = 750
+min_iters = 750
 last_iters = min_iters
 
 max_alpha = 100
-min_alpha = 0.01
+min_alpha = 0.001
 last_alpha = min_alpha
 
 min_error = 100
