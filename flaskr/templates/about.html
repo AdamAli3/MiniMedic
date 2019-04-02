@@ -15,10 +15,6 @@
     <script type=text/javascript>
       $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 
-      $(document).ready(function() {
-       $('.results').hide();
-      });
-
       $(function() {
         $('a#calculate').bind('click', function() {
           $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
@@ -29,13 +25,7 @@
             pelvic_radius: $('input[name="PR"]').val(),
             degree_spondylolisthesis: $('input[name="DR"]').val(),
           }, function(data) {
-            $(".results").show();
-            $('html, body').animate({
-                scrollTop: $(".results").offset().top
-              }, 600);
             $("#result").text(data.result);
-            $("#description").text(data.description);
-            $("#treatment").text(data.treatment);
           });
           return false;
         });
@@ -54,10 +44,8 @@
                   </div>
                   <img src="static/img/mini-medic-home-page-header-logo-line@2x.png" class="headerlogoline"/>
                   <img src="static/img/mini-medic-home-page-header-underline-1.png" class="headerunderline"/>
-                  <div>
-                    <a href="/about" class="about">
-                        About
-                    </a>
+                  <div class="about">
+                      About
                   </div>
                   <div class="graphs">
                       Graphs
@@ -66,99 +54,43 @@
                       Mini Medic
                   </div>
               </div>
-              <div class="inputdata">
-                <div class="insertdatabelow">
-                    Insert Data Below
-                </div>
-                <div class="pelvicincidence">
-                    <div class="rectangle">
-                    </div>
-                    <div class="pelvicincidence1">
-                        Pelvic Incidence
-                    </div>
-                    <input class="label" type=text name=PI placeholder="0.0" onfocus="this.placeholder = ''" onblur="this.placeholder = '0.0'">
-                </div>
-                <div class="pelvictilt">
-                    <div class="rectangle">
-                    </div>
-                    <div class="pelvictilt1">
-                        Pelvic Tilt
-                    </div>
-                    <input class="label" type=text name=PT placeholder="0.0" onfocus="this.placeholder = ''" onblur="this.placeholder = '0.0'">
-                </div>
-                <div class="lumbarlordosisangle">
-                    <div class="rectangle">
-                    </div>
-                    <div class="lumbarlordosisangl">
-                        Lumbar<br />Lordosis Angle
-                    </div>
-                    <input class="label" type=text name=LA placeholder="0.0" onfocus="this.placeholder = ''" onblur="this.placeholder = '0.0'">
-                </div>
-                <div class="sacralslope">
-                    <div class="rectangle">
-                    </div>
-                    <div class="sacralslope1">
-                        Sacral Slope
-                    </div>
-                    <input class="label" type=text name=SS placeholder="0.0" onfocus="this.placeholder = ''" onblur="this.placeholder = '0.0'">
-                </div>
-                <div class="pelvicradius">
-                    <div class="rectangle">
-                    </div>
-                    <div class="pelvicradius1">
-                        Pelvic Radius
-                    </div>
-                    <input class="label" type=text name=PR placeholder="0.0" onfocus="this.placeholder = ''" onblur="this.placeholder = '0.0'">
-                </div>
-                <div class="degreespondylolisthesis">
-                    <div class="rectangle">
-                    </div>
-                    <div class="degreespondylolisth">
-                        Degree Spondylolisthesis
-                    </div>
-                    <input class="label" style="border: hidden; outline: none;" type=text name=DS placeholder="0.0" onfocus="this.placeholder = ''" onblur="this.placeholder = '0.0'">
-                </div>
-                <div class="or">
-                    ~or~
-                </div>
-                <div class="uploadfilebutton" style="cursor: wait;">
-                    <div class="rectangle">
-                    </div>
-                    <div class="uploadfile">
-                        Upload file
-                    </div>
-                </div>
-                <div class="gobutton">
-                    <div class="buttonbackground">
-                    </div>
-                    <a href=# class="go" id=calculate >
-                        GO!
-                    </a>
-                </div>
-              </div>
-              <div class="results">
-                  <img anima-src="static/img/mini-medic-home-page-background.png" class="background" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                  <div class="treatment" id="treatment">
-                      Physical therapy exercises to help increase the flexibility in the lower back can help to support abdominal and back muscles, and stretch the hamstrings to alleviate
-                      stress in the lower back.
+              <div class="about">
+                  <div class="pelvicincidence">
+                      Pelvic Incidence
                   </div>
-                  <div class="description" id="description">
-                      Spondylolisthesis is when a vertebra slips out of alignment and onto the vertebra below it, most often occuring at the base of the spine. It occurs most often in young
-                      athletes and patients with over 60 with osteoarthritis and minimal trauma.
+                  <div class="pelvicincidence1">
+                      Pelvic incidence is measured as the angle between the line perpendicular to the sacral plate at its centre and the line connecting the sacral centre point to the femoral heads axis.
                   </div>
-                  <div class="treatment1">
-                      Treatment:
+                  <div class="pelvictilt">
+                      Pelvic Tilt
                   </div>
-                  <div class="description1">
-                      Description:
+                  <div class="pelvictilt1">
+                      Pelvic tilt is measured as the angle between the line drawn from the anterior superior iliac spines to the pubic symphysis, known as the anterior pelvic plane, and the vertical line connecting the anterior superior iliac spines.
                   </div>
-                  <div class="spondylolisthesis" id=result>
-                      SPONDYLOLISTHESIS
+                  <div class="lumbarangle">
+                      Lumbar Lordosis Angle
                   </div>
-                  <div class="diagnosis">
-                      <span class="span1">Diagnosis</span><span class="span2">: </span>
+                  <div class="lumbarangle1">
+                      The lumbar lordosis angle is measured as the angle between a line drawn through the articulation between the sacrum and the first vertebra above the sacrum, and a line drawn through the articulation between the fifth and sixth vertebrae.
                   </div>
-                  <img anima-src="static/img/mini-medic-home-page-header-underline.png" class="headerunderline" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                  <div class="sacralslope">
+                      Sacral Slope
+                  </div>
+                  <div class="sacralslope1">
+                      Sacral slope is measured as the angle formed between the tangent line to the superior endplate of S1 (the most cranial sacral bone) and the horizontal plane.
+                  </div>
+                  <div class="pelvicradius">
+                      Pelvic Radius
+                  </div>
+                  <div class="pelvicradius1">
+                      Pelvic radius can be measured as as the radius of the arc formed between the angle of a line connecting the hip axis and the posterior corner of S1 (the most cranial sacral bone), and a line drawn along the sacral endplate, PRS1.
+                  </div>
+                  <div class="degree">
+                      Degree Spondylolisthesis
+                  </div>
+                  <div class="degree1">
+                      Degree Spondylolisthesis is classified as the degree of slip that can be translated into a grading system, with Grade I: 0-25%, Grade II: 25-50%, Grade III: 50-75%, Grade IV: 75-100%, Grade V: greater than 100% slippage.
+                  </div>
               </div>
 
 

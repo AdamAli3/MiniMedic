@@ -40,6 +40,222 @@ div {
 div {
   -webkit-text-size-adjust: none;
 }
+.minimedichomepage .about {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 114px;
+  height              : 800px;
+  width               : 1442px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.minimedichomepage .about .pelvicincidence {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 60px;
+  height              : auto;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Gotham-Medium", Helvetica, Arial, serif;
+  font-size           : 30.0px;
+  color               : rgba(153, 0, 153, 1.0);
+  text-align          : center;
+  line-height         : 36.0px;
+}
+.minimedichomepage .about .pelvicincidence1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 110px;
+  height              : auto;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Gotham-Book", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(153, 0, 153, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
+.minimedichomepage .about .pelvictilt {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 170px;
+  height              : auto;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Gotham-Medium", Helvetica, Arial, serif;
+  font-size           : 30.0px;
+  color               : rgba(153, 0, 153, 1.0);
+  text-align          : center;
+  line-height         : 36.0px;
+}
+.minimedichomepage .about .pelvictilt1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 220px;
+  height              : auto;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Gotham-Book", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(153, 0, 153, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
+.minimedichomepage .about .lumbarangle {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 280px;
+  height              : auto;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Gotham-Medium", Helvetica, Arial, serif;
+  font-size           : 30.0px;
+  color               : rgba(153, 0, 153, 1.0);
+  text-align          : center;
+  line-height         : 36.0px;
+}
+.minimedichomepage .about .lumbarangle1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 330px;
+  height              : auto;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Gotham-Book", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(153, 0, 153, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
+.minimedichomepage .about .sacralslope {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 390px;
+  height              : auto;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Gotham-Medium", Helvetica, Arial, serif;
+  font-size           : 30.0px;
+  color               : rgba(153, 0, 153, 1.0);
+  text-align          : center;
+  line-height         : 36.0px;
+}
+.minimedichomepage .about .sacralslope1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 440px;
+  height              : auto;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Gotham-Book", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(153, 0, 153, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
+.minimedichomepage .about .pelvicradius {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 500px;
+  height              : auto;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Gotham-Medium", Helvetica, Arial, serif;
+  font-size           : 30.0px;
+  color               : rgba(153, 0, 153, 1.0);
+  text-align          : center;
+  line-height         : 36.0px;
+}
+.minimedichomepage .about .pelvicradius1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 550px;
+  height              : auto;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Gotham-Book", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(153, 0, 153, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
+.minimedichomepage .about .degree {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 610px;
+  height              : auto;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Gotham-Medium", Helvetica, Arial, serif;
+  font-size           : 30.0px;
+  color               : rgba(153, 0, 153, 1.0);
+  text-align          : center;
+  line-height         : 36.0px;
+}
+.minimedichomepage .about .degree1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 660px;
+  height              : auto;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Gotham-Book", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(153, 0, 153, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
 .minimedichomepage .results {
   background-color    : rgba(255,255,255,0.0);
   top                 : 791px;
